@@ -1,0 +1,227 @@
+/*CSS from 
+https://www.sitepoint.com/pure-css3-speech-bubbles/
+*/
+
+/*div.speech {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #666;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding: 5px;
+    top: -5px;
+}*/
+
+div.speech:before,
+div.speech:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+div.speech:before {
+    left: 30px;
+    top: 28px;
+    border: 7px solid;
+    border-color: #666 transparent transparent #666;
+}
+
+div.speech:after {
+    left: 38px;
+    top: 100px;
+    border: 1px solid;
+    border-color: #fff transparent transparent #fff;
+}
+
+
+/* Extra CSS */
+
+/*.adder {
+    height: 30px;
+    width: 230px;
+    background: #c2c2c2;
+    position: absolute;
+}*/
+
+/*.adder .colorCode div {
+    float: left;
+    margin: 0 8px;
+}*/
+
+.annotator-adder {
+    background-image: none !important;
+}
+
+/*.annotator-adder .adder .colorCode .round p {
+    text-decoration: underline;
+    font-size: 15px;
+    color: #0000FF;
+    margin: 0px;
+    font-family: sans-serif;
+}*/
+
+.extra-annotator-controls {
+    background-image: none;
+}
+
+/*.extra-annotator-controls .round {
+    height: 15px;
+    width: 15px;
+    border-radius: 25px;
+    float: left;
+    margin-right: 25px;
+}*/
+
+/*.colorPickers {
+    height: 15px;
+    padding: 5px 0 0 15px;
+    padding: 10px 0 10px 15px;
+    border: 1px solid black;
+}*/
+
+.annotator-adder button {
+    padding: 0 !important;
+}
+
+.annotator-viewer button:hover {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.hg_FF0000 {
+    background: #F776AB !important;
+}
+
+.hg_00FF00 {
+    background: #7FDF49 !important;
+}
+
+.hg_0000FF {
+    background: #FCEC1C !important;
+}
+
+.only-highlight {
+    min-width: 50px !important;
+}
+
+.invisible {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+
+/*
+Annotator Options
+P1
+*/
+.adder{
+	height: 36px;
+    border-radius: 0;
+    border: 1px solid #7B7B7B;
+    padding: 0px 7.5px;
+    width: 258px;
+	background: #F3F3F3;
+    border-radius: 5px;
+}
+
+.adder .colorCode div {
+    float: left;
+    vertical-align: c;
+    width: 86px;
+    box-sizing: border-box;
+    padding: 8px 7.5px 0px 7.5px;
+}
+
+.annotator-adder .adder .colorCode .round p {
+    text-decoration: none;
+    font-size: 15px;
+    color: #074F84;
+    margin: 0px;
+    position: absolute;
+    font-family: sans-serif;
+}
+
+.adder .colorCode div:not(:last-child)::after {
+    content: '';
+    position: relative;
+    display: block;
+    height: 25px;
+    width: 1px;
+    border-right: 1px solid #BBBBBB;
+    top: -4px;
+    left: 77px;
+}
+
+div.speech:before {    
+    display: block;
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 30px;
+    border-top: 12px solid #7B7B7B;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;   
+}
+
+div.speech:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    border-top: 12px solid #F3F3F3;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;  
+}
+
+
+/*
+    Color Picker
+    P2*/
+
+.extra-annotator-controls .round {
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;    
+    display: inline-block;
+}
+
+.extra-annotator-controls .round:not(:last-child) {
+    margin-right: 25px;
+}
+
+.colorPickers {
+    padding: 10px !important;
+    background: #FFFFFF !important;
+    border: 1px solid #2A75AC;
+    border-radius: 4px;
+}
+
+.annotator-widget:after{
+	background-image: none;
+    display: none !important;
+}
+
+.extra-annotator-controls.colorPickers:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 30px;
+    border-top: 12px solid #2A75AC;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.extra-annotator-controls.colorPickers:after{
+	display: block;
+    content: '';
+    position: absolute;
+    top: 55px;
+    left: 30px;
+    border-top: 12px solid #FFFFFF;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}

@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
+    less = require('gulp-less'),
     gutil = require('gulp-util');
 
 // create a default task and just log a message
@@ -19,8 +20,15 @@ gulp.task('my-task', function() {
         .pipe(gulp.dest('app/js/'));
 });
 
+gulp.task('less', function () {
+  return gulp.src('app/assets/less/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('app/css/'));
+});
+
+
 gulp.task('watch', function() {
     gulp.watch('app/assets/**/*.js', ['my-task']);
 });
 
-gulp.task('default', ['my-task', 'watch']);
+gulp.task('default', ['my-task', 'watch', 'less']);
