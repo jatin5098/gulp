@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
     less = require('gulp-less'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    inject = require('gulp-inject')
+    ;
 
 // create a default task and just log a message
 
@@ -31,4 +33,12 @@ gulp.task('watch', function() {
     gulp.watch('app/assets/**/*.js', ['my-task']);
 });
 
-gulp.task('default', ['my-task', 'watch', 'less']);
+// Select file, add plugins, move to dest
+gulp.task('inject-to-html', function () {
+    gulp.src('./index.html')
+        .pipe(inject(gulp.src('./app/js/*.js', {read: true}), {relative: false}))
+        .pipe(inject(gulp.src('./app/css/*.css', {read: true}), {relative: false}))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('default', ['my-task', 'watch', 'less', 'inject-to-html']);
