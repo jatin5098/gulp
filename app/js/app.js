@@ -1,2 +1,2 @@
-console.log("Inside app.js");var app="Application";
-console.log("Inside module.js"),console.log("Inside module.js");
+"use strict";function _classCallCheck(a,s){if(!(a instanceof s))throw new TypeError("Cannot call a class as a function")}var EcmaSix=function a(){_classCallCheck(this,a),this.a=10,this.b=20};
+"use strict";console.log("Inside module.js");

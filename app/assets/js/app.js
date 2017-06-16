@@ -1,2 +1,6 @@
-console.log("Inside app.js");
-var app = "Application";
+class EcmaSix {
+    constructor() {
+        this.a = 10;
+        this.b = 20;
+    }
+}
