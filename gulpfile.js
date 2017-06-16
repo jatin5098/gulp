@@ -18,10 +18,10 @@ gulp.task('my-task', function() {
     gulp.src(['app/assets/**/*.js'])
         .pipe(babel({
                 presets: ['es2015']
-            }))
+            }))        
+        .pipe(concat('app.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(concat('app.js'))
         .pipe(clean())
         .pipe(gulp.dest('app/js/'));
 });
